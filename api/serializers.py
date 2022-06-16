@@ -11,7 +11,6 @@ class IncubadoraSerializer(serializers.ModelSerializer):
 
 class CamaraSerializer(serializers.ModelSerializer):
     incubadora = serializers.PrimaryKeyRelatedField(required=False, queryset=Incubadora.objects.all(), many=False)
-    videos = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
     
     class Meta:
         model = Camara
