@@ -17,13 +17,6 @@ class CamaraSerializer(serializers.ModelSerializer):
         model = Camara
         fields = ('__all__')
 
-class VideoSerializer(serializers.ModelSerializer):
-    camara = serializers.PrimaryKeyRelatedField(required=True, queryset=Camara.objects.all(), many=False)
-    
-    class Meta:
-        model = Video
-        fields = ('__all__')
-
 class TopicSerializer(serializers.ModelSerializer):
     sensores = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
     

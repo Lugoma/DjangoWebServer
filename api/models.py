@@ -15,12 +15,6 @@ class Camara(models.Model):
     tipo_camara = models.CharField(max_length=200)
     puerto = models.CharField(max_length=100, null=True, default="")
     activo = models.BooleanField(default=False)
-
-class Video(models.Model):
-    camara = models.ForeignKey(Camara, related_name='videos', on_delete=models.CASCADE, null=False)
-    nombre_video = models.CharField(max_length=200)
-    path = models.CharField(max_length=200)
-    fecha = models.DateTimeField()
     
 class Topic(models.Model):
     nombre = models.CharField(max_length=200)
